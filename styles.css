@@ -52,7 +52,9 @@ padding: 24px 0;
   cursor: none;
 }
 
+
 /*NAV*/
+
 
 #landing {
   background-color: rgba(115, 66, 214, 0.1)
@@ -101,7 +103,75 @@ nav {
   text-decoration: none;
 }
 
+/* THIS IS FOR THE BUGGER MENU */
+
+.btn__menu {
+  background-color: transparent;
+  font-size: 40px;
+  text-align: center;
+  border: none;
+   color: #7342d6;
+   display: none; 
+}
+.menu__backdrop {
+  border: 2px solid red;
+  position: absolute; /* this to make position normal */
+  background-color: black;
+  top: 0;
+  left: 0;
+ width: 100vw;
+height: 100vh;
+z-index: 100;
+display: flex;
+justify-content: center;
+align-items: center;
+align-items: center;
+display: none;
+/* for animation */
+transition: all 30ms ease;
+opacity: 0;
+visibility: hidden;
+
+}
+
+.menu--open .menu__backdrop{
+  display: flex;
+  /* for animation */
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu--open { /* thsi is to only see the menu open on the screen */
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+.menu__links {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__link {
+  color: white;
+  font-size: 40px;
+}
+
+.menu__list {
+  padding: 32px 0;
+}
+
+.btn__menu--close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  padding: 8px;
+  color: white;
+
+}
+
+
 /*HEADER*/
+
 header {
   height: calc(100vh - 80px);
   display: flex;
@@ -202,9 +272,8 @@ button:active {
 
 
 
-/*.highlights {
+/*.highlights {} */
 
-} */
 .highlight__wrapper {
   display: flex;
 }
@@ -214,7 +283,8 @@ button:active {
   width: calc(100% / 3);
  display: flex;
  align-items: center;
- justify-content: center;
+ flex-wrap: wrap;
+
  flex-direction: column;
 }
 
@@ -233,12 +303,15 @@ button:active {
   justify-content: center;
   border-radius: 4px;
   font-size: 32px;
-  border-bottom: 24px;
+  margin-bottom: 24px;
+
 }
 
 .highliht__subtitle {
   font-size: 20px;
   margin-bottom: 16px;
+  
+  text-align: center;
 }
 
 /* FEATURES */
@@ -296,9 +369,7 @@ flex-wrap: wrap;
 
 }
 
-/*.book__price {
-
-} */
+/*.book__price {} */
 
 .book__price--normal {
 text-decoration: line-through;
@@ -312,13 +383,12 @@ color: gray;
 }
 
 /* FOOTER */
+
 footer {
   background-color: #242424;
 }
 
-/*.footer__logo {
- 
-}*/
+/*.footer__logo {}*/
 
 .footer__logo--img {
  width: 160px;
@@ -343,6 +413,42 @@ padding: 0 8px;
 color: white;
 }
 
+/* IF WE DONT WANT TO SHOW THE MENU, ADD THE BREAK POINT */
+
+@media (max-width: 550px) {
+  .nav__links {
+    display: none;
+  }
+  .btn__menu {
+    display: block; /* only display it with max-width = 550px */
+  }
+  .highlight {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}
+
+
+
 /* Let make out webesite responsive */
+/* SMALL PHONE, TABLETS, LARGE SMARTPHONE */
+@media(max-width: 768px){
+  .header__description {
+    padding: 0 24px;
+  }
+h1{
+  font-size: 40px;
+}
+h2{
+  font-size: 26px;
+}
+button {
+  font-size: 18px;
+}
+.book {
+  width: 50%;
+}
+
+}
 
 
